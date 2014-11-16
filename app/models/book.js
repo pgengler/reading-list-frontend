@@ -2,12 +2,13 @@ import DS from 'ember-data';
 
 var Book = DS.Model.extend({
   title: DS.attr('string'),
+  authors: DS.hasMany('author', { async: true }),
   list: DS.belongsTo('list')
 });
 
 Book.reopenClass({
   FIXTURES: [
-    { id: 1, title: 'Le avventure di Pinocchio', list_id: 1 }
+    { id: 1, title: 'Le avventure di Pinocchio', authors: [ 1 ], list: 1 }
   ]
 });
 

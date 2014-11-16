@@ -1,5 +1,14 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  name: DS.attr('string')
+var List = DS.Model.extend({
+  name: DS.attr('string'),
+  books: DS.hasMany('book', { async: true })
 });
+
+List.reopenClass({
+  FIXTURES: [
+    { id: 1, name: 'My reading list', books: [ 1 ] }
+  ]
+});
+
+export default List;

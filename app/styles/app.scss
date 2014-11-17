@@ -1,0 +1,24 @@
+html, body {
+  margin: 20px;
+}
+
+ul.list {
+  border-collapse: collapse;
+  display: table;
+  list-style-type: none;
+  width: 100%;
+
+  li {
+    display: table-row;
+
+    div {
+      border: 1px solid #777;
+      display: table-cell;
+      padding: 0.5em;
+    }
+
+    .authors::before {
+      content: '» ';
+    }
+  }
+}

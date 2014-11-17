@@ -1,11 +1,17 @@
-<ul>
+<ul class="list">
 {{#each book in books}}
 	<li>
-		{{book.title}}
-		<br>
-		{{#each author in book.authors}}
-			{{author.name}}
-		{{/each}}
+		<div>
+			{{book.title}}
+			<br>
+			{{#if book.authors}}
+				<span class="authors">
+				{{#each author in book.authors}}
+					{{author.name}}
+				{{/each}}
+				</span>
+			{{/if}}
+		</div>
 	</li>
 {{/each}}
 </ul>

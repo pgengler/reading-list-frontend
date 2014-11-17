@@ -7,7 +7,7 @@ var List = DS.Model.extend({
 
 List.reopenClass({
   FIXTURES: [
-    { id: 1, name: 'My reading list', books: [ 1 ] }
+    { id: 1, name: 'My reading list', books: [ 1, 2 ] }
   ]
 });
 

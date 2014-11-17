@@ -8,7 +8,8 @@ var Book = DS.Model.extend({
 
 Book.reopenClass({
   FIXTURES: [
-    { id: 1, title: 'Le avventure di Pinocchio', authors: [ 1 ], list: 1 }
+    { id: 1, title: 'Le avventure di Pinocchio', authors: [ 1 ], list: 1 },
+    { id: 2, title: 'The Name of the Wind', authors: [ 2 ], list: 1 }
   ]
 });
 

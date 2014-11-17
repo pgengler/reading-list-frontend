@@ -1,7 +1,10 @@
 <ul class="list">
 {{#each book in books}}
 	<li>
-		<div>
+		<div class="position">
+			{{book.position}}
+		</div>
+		<div class="title-and-author">
 			{{book.title}}
 			<br>
 			{{#if book.authors}}

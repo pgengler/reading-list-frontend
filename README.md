@@ -1,8 +1,8 @@
-# Readinglist
+# Reading List
 
 This README outlines the details of collaborating on this Ember application.
 
-A short introduction of this app could easily go here.
+This is the in-progress new frontend for the [Reading list](http://readinglist.pgengler.net) app.
 
 ## Prerequisites
 
@@ -13,19 +13,25 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
+* `git clone https://github.com/pgengler/reading-list-frontend.git`
+* `cd reading-list-frontend`
 * `npm install`
 * `bower install`
 
+### For the dummy API server
+* `cd dummy-api`
+* `bundle install`
+
 ## Running / Development
 
-* `ember server`
+### Starting the dummy API server
+* `cd dummy-api`
+* `rackup`
+The dummy API server should now be running on port 9292.
+
+### Serving the Ember frontend
+* `ember server --proxy http://localhost:9292`
 * Visit your app at http://localhost:4200.
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
 
 ### Running Tests
 

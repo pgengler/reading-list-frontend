@@ -1,6 +1,6 @@
-<ul class="list">
+{{#sortable-list action="updatePositions"}}
 {{#each book in sortedBooks}}
-	<li>
+	<li data-id="{{unbound book.id}}">
 		<div class="position">
 			{{book.position}}
 		</div>
@@ -17,4 +17,4 @@
 		</div>
 	</li>
 {{/each}}
-</ul>
+{{/sortable-list}}

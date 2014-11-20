@@ -26,3 +26,20 @@ get '/api/v0/lists/1' do
 		authors: authors
 	}.to_json
 end
+
+put '/api/v0/books/:id' do
+	content_type :json
+	json_params = JSON.parse(request.body.read)
+	@book = find_book(books, params['id'].to_i)
+	@book[:position] = json_params['book']['position'].to_i
+	{ book: @book }.to_json
+end
+
+def find_book(books, id)
+	books.each do |book|
+		if book[:id] == id
+			return book
+		end
+	end
+	nil
+end

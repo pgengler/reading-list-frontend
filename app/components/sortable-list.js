@@ -8,7 +8,7 @@ export default Ember.Component.extend({
 		var component = this;
 		var $elem = this.$();
 		$elem.sortable({
-			update: function(event, ui) {
+			update: function() {
 				// Calculate new positions for children
 				var positions = { };
 				$elem.children().each(function(index) {

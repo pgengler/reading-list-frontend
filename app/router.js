@@ -6,8 +6,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('lists');
-  this.resource('list', { path: '/list/:list_id' });
+  this.route('index', { path: '/' }, function() {
+    this.route('list', { path: 'list/:list_id' }, function() {
+      this.route('record', { path: 'record/:record_id' });
+    });
+  });
 });
 
 export default Router;

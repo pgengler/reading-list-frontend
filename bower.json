@@ -13,6 +13,8 @@
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
-    "jquery-ui": "~1.11.2"
+    "jquery-ui": "~1.11.2",
+    "bourbon": ">=4.0",
+    "neat": "~1.7.0"
   }
 }

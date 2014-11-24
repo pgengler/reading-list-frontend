@@ -1,15 +1,15 @@
 {{#sortable-list action="updatePositions"}}
-{{#each book in sortedBooks}}
-	<li data-id="{{unbound book.id}}">
+{{#each record in sortedRecords}}
+	<li data-id="{{unbound record.id}}">
 		<div class="position">
-			{{book.position}}
+			{{record.position}}
 		</div>
 		<div class="title-and-author">
-			{{book.title}}
+			{{record.book.title}}
 			<br>
-			{{#if book.authors}}
+			{{#if record.book.authors}}
 				<span class="authors">
-				{{#each author in book.authors}}
+				{{#each author in record.book.authors}}
 					{{author.name}}
 				{{/each}}
 				</span>

@@ -1,21 +1,21 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-	bookSort: [ 'position' ],
-	sortedBooks: Ember.computed.sort('books', 'bookSort'),
+	recordSort: [ 'position' ],
+	sortedRecords: Ember.computed.sort('records', 'recordSort'),
 
 	actions: {
 		updatePositions: function(positions) {
-			var books = this.get('books');
-			books.beginPropertyChanges();
-			books.forEach(function(book) {
-				var id = book.get('id');
+			var records = this.get('records');
+			records.beginPropertyChanges();
+			records.forEach(function(record) {
+				var id = record.get('id');
 				if (positions[id]) {
-					book.set('position', positions[id]);
+					record.set('position', positions[id]);
 				}
 			});
-			books.endPropertyChanges();
-			books.save();
+			records.endPropertyChanges();
+			records.save();
 		}
 	}
 });

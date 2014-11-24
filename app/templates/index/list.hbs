@@ -5,6 +5,10 @@
         {{#link-to "index.list.record" record}}
           {{record.book.title}}
         {{/link-to}}
+        {{#if record.book.authors}}
+          <br>
+          &raquo; {{author-list record.book}}
+        {{/if}}
       </li>
     {{/each}}
   </ul>

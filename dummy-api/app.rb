@@ -24,7 +24,7 @@ records = [
 
 get '/api/v0/lists' do
 	content_type :json
-	lists.to_json
+	{ lists: lists }.to_json
 end
 
 get '/api/v0/lists/:id' do

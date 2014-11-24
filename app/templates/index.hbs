@@ -8,9 +8,9 @@
     </div>
   </div>
   <ul>
-    <li>{{#link-to "index.list"}}Books I own{{/link-to}}</li>
-    <li><a href="#">Books I read</a></li>
-    <li><a href="#">Books I want to read</a></li>
+    {{#each list in content}}
+      <li>{{#link-to "index.list" list.id}}{{list.name}}{{/link-to}}</li>
+    {{/each}}
   </ul>
 </aside>
 {{outlet}}

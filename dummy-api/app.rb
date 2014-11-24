@@ -3,7 +3,7 @@ require 'json'
 
 lists = [
 	{ id: 1, name: 'My reading list', record_ids: [ 1, 2, 3 ] },
-	{ id: 2, name: 'Recommended', record_ids: [ 2, 3 ] }
+	{ id: 2, name: 'Recommended', record_ids: [ 4, 5 ] }
 ]
 books = [
 	{ id: 1, title: 'Le avventure di Pinocchio', author_ids: [ 1 ] },

@@ -15,8 +15,9 @@
       {{/if}}
       <h6>In lists:</h6>
       <ul>
-        <li>Books I own</li>
-        <li>Books I read</li>
+        {{#each list in book.lists}}
+        <li>{{list.name}}</li>
+        {{/each}}
       </ul>
       <input placeholder="Add to list">
     </div>

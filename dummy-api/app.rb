@@ -6,9 +6,9 @@ lists = [
 	{ id: 2, name: 'Recommended', record_ids: [ 4, 5 ] }
 ]
 books = [
-	{ id: 1, title: 'Le avventure di Pinocchio', author_ids: [ 1 ], read_on: nil },
-	{ id: 2, title: 'The Name of the Wind', author_ids: [ 2 ], read_on: Date.today },
-	{ id: 3, title: "The Wise Man's Fear", author_ids: [ 2 ], read_on: nil }
+	{ id: 1, title: 'Le avventure di Pinocchio', author_ids: [ 1 ], read_on: nil, list_ids: [ 1 ] },
+	{ id: 2, title: 'The Name of the Wind', author_ids: [ 2 ], read_on: Date.today, list_ids: [ 1, 2 ] },
+	{ id: 3, title: "The Wise Man's Fear", author_ids: [ 2 ], read_on: nil, list_ids: [ 1, 2 ] }
 ]
 authors = [
 	{ id: 1, name: 'Carlo Collodi' },

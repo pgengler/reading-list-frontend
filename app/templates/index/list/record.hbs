@@ -8,9 +8,11 @@
       <img src="http://placekitten.com/g/200/300">
     </div>
     <div>
-      <h6>Read on:</h6><date>2014-01-01</date>
+      {{#if book.readOn}}
+      <h6>Read on:</h6><date>{{book.readOn}}</date>
       <br>
       <br>
+      {{/if}}
       <h6>In lists:</h6>
       <ul>
         <li>Books I own</li>

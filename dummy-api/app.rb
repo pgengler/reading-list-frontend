@@ -6,9 +6,9 @@ lists = [
 	{ id: 2, name: 'Recommended', record_ids: [ 4, 5 ] }
 ]
 books = [
-	{ id: 1, title: 'Le avventure di Pinocchio', author_ids: [ 1 ], read_on: nil, list_ids: [ 1 ] },
-	{ id: 2, title: 'The Name of the Wind', author_ids: [ 2 ], read_on: Date.today, list_ids: [ 1, 2 ] },
-	{ id: 3, title: "The Wise Man's Fear", author_ids: [ 2 ], read_on: nil, list_ids: [ 1, 2 ] }
+	{ id: 1, title: 'Le avventure di Pinocchio', author_ids: [ 1 ], read_on: nil, list_ids: [ 1 ], not: nil },
+	{ id: 2, title: 'The Name of the Wind', author_ids: [ 2 ], read_on: Date.today, list_ids: [ 1, 2 ], note: nil },
+	{ id: 3, title: "The Wise Man's Fear", author_ids: [ 2 ], read_on: nil, list_ids: [ 1, 2 ], note: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sollicitudin est pellentesque nisl pretium suscipit.' }
 ]
 authors = [
 	{ id: 1, name: 'Carlo Collodi' },
@@ -49,6 +49,18 @@ put '/api/v0/records/:id' do
 	@record = find_record(records, params['id'].to_i)
 	@record[:position] = json_params['record']['position'].to_i
 	{ record: @record }.to_json
+end
+
+put '/api/v0/books/:id' do
+	content_type :json
+	json_params = JSON.parse(request.body.read)
+	@book = find_book(books, params['id'].to_i)
+	@book[:note] = json_params['book']['note']
+	{ book: @book }.to_json
+end
+
+def find_book(books, id)
+	books.select { |book| book[:id] == id }.first
 end
 
 def find_record(records, id)
